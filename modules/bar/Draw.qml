@@ -5,6 +5,7 @@ import Qt5Compat.GraphicalEffects
 Shape {
   id: shape
   anchors.fill: parent
+  layer.enabled: true
 
   ShapePath {
     strokeWidth: 0
@@ -38,13 +39,6 @@ Shape {
   // ===== CHỈ VẼ ĐƯỜNG DƯỚI =====
   Shape {
     anchors.fill: parent
-    layer.enabled: true
-
-    layer.effect: Glow {
-      radius: 8
-      samples: 16
-      color: "#831C91"
-    }
 
     ShapePath {
       strokeWidth: 2

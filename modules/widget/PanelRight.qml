@@ -5,7 +5,7 @@ import Quickshell.Wayland
 import Qt5Compat.GraphicalEffects
 
 PanelWindow {
-  implicitWidth: 350
+  implicitWidth: 400
   implicitHeight: Screen.height
   WlrLayershell.exclusiveZone: 0   // không chiếm không gian ứng dụng
   color: "transparent"
@@ -18,8 +18,8 @@ PanelWindow {
   ColumnLayout{
     anchors.fill: parent
     anchors.margins: 16
-    TimePanel{}
-    ShortcutPanel{}
-    SystemStatsWidget{}
+    WeatherPanel{}
+    MediaPanel{}
+    CalendarPanel{}
   }
 }

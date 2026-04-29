@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 import Qt5Compat.GraphicalEffects
+import QtQuick.Shapes
 
 Rectangle {
   color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
@@ -15,114 +16,134 @@ Rectangle {
     anchors.margins: 30
     spacing: 8
 
-    // Greeting
     Text {
-      layer.enabled: true
-      layer.effect: Glow {
-        radius: 8
-        samples: 16
-        color: "#831C91"
-      }
-      Layout.alignment: Qt.AlignLeft
+      id: greetingText
       text: "Good evening, Samurai."
       color: "white"
       font.pixelSize: 20
       font.bold: true
-    }
+      Layout.alignment: Qt.AlignLeft
 
-    // Japanese Quote
-    Text {
+      // Glow layer
       layer.enabled: true
       layer.effect: Glow {
-        radius: 5
-        samples: 16
+        radius: 10
+        samples: 20
         color: "#831C91"
       }
-      Layout.alignment: Qt.AlignLeft
+
+    }
+
+    Text {
+      id: japaneseText
       text: "未来は今日始まる。"
       color: "#e0e0f0"
       font.pixelSize: 16
       font.italic: true
-    }
+      Layout.alignment: Qt.AlignLeft
 
-    // English Translation
-    Text {
       layer.enabled: true
       layer.effect: Glow {
-        radius: 3
-        samples: 16
+        radius: 6
+        samples: 17
         color: "#831C91"
       }
-      Layout.alignment: Qt.AlignLeft
+    }
+
+    Text {
+      id: englishText
       text: "The future begins today."
       color: "white"
       font.pixelSize: 16
+      Layout.alignment: Qt.AlignLeft
+
+      layer.enabled: true
+      layer.effect: Glow {
+        radius: 4
+        samples: 17
+        color: "#831C91"
+      }
     }
 
-    // Spacer
     Item {
       Layout.fillHeight: true
     }
 
-    // Bottom Row: Time, Temperature, Date
     ColumnLayout {
       Layout.alignment: Qt.AlignBottom
       Layout.fillWidth: true
 
-      RowLayout{
+      RowLayout {
+        spacing: 15
+
         Text {
+          id: timeText
           text: "20:47"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#5b2adc"
-          }
+          color: "#ffffff"
           font.pixelSize: 40
-        }
+          font.bold: true
+          font.family: "monospace"
+          Layout.alignment: Qt.AlignVCenter
 
-        // Temperature
-        Text {
-          text: "36°"
-          color: "white"
+          // Double glow cho time
           layer.enabled: true
           layer.effect: Glow {
-            radius: 8
-            samples: 16
+            radius: 12
+            samples: 25
             color: "#5b2adc"
           }
-          font.pixelSize: 32
         }
 
+        Text {
+          id: tempText
+          text: "36°"
+          color: "#ffffff"
+          font.pixelSize: 32
+          font.bold: true
+          Layout.alignment: Qt.AlignVCenter
+          layer.enabled: true
+          layer.effect: Glow {
+            radius: 12
+            samples: 25
+            color: "#5b2adc"
+          }
+
+        }
       }
 
-      // Date
+      // Date với hiệu ứng scanline
       ColumnLayout {
         spacing: 2
+
         Text {
-          text: "24 May, 2024"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#5b2adc"
-          }
+          id: dateText
+          text: "24 May, 2026"
           color: "white"
           font.pixelSize: 16
-        }
-        Text {
-          text: "Friday"
+
           layer.enabled: true
           layer.effect: Glow {
-            radius: 8
-            samples: 16
+            radius: 6
+            samples: 17
             color: "#5b2adc"
           }
+        }
+
+        Text {
+          id: dayText
+          text: "Friday"
           color: "white"
           font.pixelSize: 14
+
+          layer.enabled: true
+          layer.effect: Glow {
+            radius: 4
+            samples: 17
+            color: "#5b2adc"
+          }
         }
       }
     }
   }
+
 }

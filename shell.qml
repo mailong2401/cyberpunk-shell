@@ -9,6 +9,7 @@ import QtQuick.Effects
 import qs.modules.bar
 import qs.commons
 import  qs.modules.widget
+import  qs.services
 
 ShellRoot {
   id: root
@@ -29,6 +30,7 @@ ShellRoot {
     active: root.settingsLoaded && Directories.ready
     sourceComponent: Item {
       Component.onCompleted: {
+        Players.init()
       }
       PanelLeft{}
       PanelRight{}

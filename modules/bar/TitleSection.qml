@@ -42,21 +42,6 @@ Item {
     }
     font.family: cyberFont.name
     font.pixelSize: 24
-    color: "#ff00ff"
-
-    // Gradient animation qua màu sắc
-    SequentialAnimation on color {
-      loops: Animation.Infinite
-
-      ColorAnimation { to: "#ffffff"; duration: 200 }
-      ColorAnimation { to: "#f2eaff"; duration: 200 }
-      ColorAnimation { to: "#e6d9ff"; duration: 200 }
-      ColorAnimation { to: "#ffffff"; duration: 200 }
-    }
-    SequentialAnimation on opacity {
-      loops: Animation.Infinite
-      NumberAnimation { to: 0.7; duration: 800; easing.type: Easing.InOutQuad }
-      NumberAnimation { to: 1.0; duration: 800; easing.type: Easing.InOutQuad }
-    }
+    color: "white"
   }
 }
