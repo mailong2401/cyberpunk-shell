@@ -48,16 +48,8 @@ PanelWindow {
       Item { Layout.fillWidth: true }
 
       // ===== RIGHT =====
-      RowLayout {
-        Layout.alignment: Qt.AlignVCenter
-
-        Text {
-          font.family: "Material Symbols Rounded"
-          text: "home"
-          font.pixelSize: 30
-          color: "red"
-        }
-      }
+      RightSection{}
+      Item {implicitWidth:50}
     }
   }
 }

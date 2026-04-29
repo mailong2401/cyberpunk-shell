@@ -5,18 +5,51 @@ import Qt5Compat.GraphicalEffects
 
 RowLayout {
   Layout.alignment: Qt.AlignCenter
+  Layout.bottomMargin: 10
+  spacing: 30
 
-  Text {
-
-    layer.enabled: true
-    layer.effect: Glow {
-      radius: 3
-      samples: 16
-      color: "#ff00ff"
-    }
-    font.family: "Material Symbols Rounded"
-    text: "home"
-    font.pixelSize: 32
-    color: "#ff00ff"
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/folder"
+    asynchronous: true
   }
+
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/firefox"
+    asynchronous: true
+  }
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/spotify"
+    asynchronous: true
+  }
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/code"
+    asynchronous: true
+  }
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/discord"
+    asynchronous: true
+  }
+  Image {
+    Layout.preferredWidth: 32
+    Layout.preferredHeight: 32
+    fillMode: Image.PreserveAspectFit
+    source:"image://icon/telegram"
+    asynchronous: true
+  }
+
 }

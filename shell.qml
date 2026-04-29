@@ -8,29 +8,30 @@ import QtQuick.Effects
 
 import qs.modules.bar
 import qs.commons
+import  qs.modules.widget
 
 ShellRoot {
-    id: root
+  id: root
 
-    FontLoader {
+  FontLoader {
     id: cyberFont
     source: "assets/fonts/GlitchGoblin.ttf"
-}
+  }
 
-
-    property bool settingsLoaded: false
-    Connections {
-        target: Settings ? Settings : null
-        function onSettingsLoaded() {
-            root.settingsLoaded = true;
-        }
+  property bool settingsLoaded: false
+  Connections {
+    target: Settings ? Settings : null
+    function onSettingsLoaded() {
+      root.settingsLoaded = true;
     }
-    Loader {
-        active: root.settingsLoaded && Directories.ready
-        sourceComponent: Item {
-            Component.onCompleted: {
-            }
-            Bar {}
-        }
+  }
+  Loader {
+    active: root.settingsLoaded && Directories.ready
+    sourceComponent: Item {
+      Component.onCompleted: {
+      }
+      PanelRight{}
+      Bar {}
     }
+  }
 }
