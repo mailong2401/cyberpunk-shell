@@ -11,7 +11,7 @@ PanelWindow {
   color: "transparent"
   WlrLayershell.layer: WlrLayer.Bottom
   anchors {
-    right: true
+    left: true
     bottom: true
     top: true
   }
@@ -21,5 +21,6 @@ PanelWindow {
     TimePanel{}
     ShortcutPanel{}
     SystemStatsWidget{}
+    NetworkWidget{}
   }
 }

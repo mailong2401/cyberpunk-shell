@@ -17,6 +17,11 @@ Shape {
     PathLine { x: shape.width * 0.05; y: 58 }
     PathLine { x: shape.width * 0.07; y: 43 }
 
+    PathLine { x: width * 0.2; y: 43 }
+    PathLine { x: width * 0.22; y: 50 }
+    PathLine { x: width * 0.8; y: 50 }
+    PathLine { x: width * 0.82; y: 43 }
+
     PathLine { x: shape.width * 0.9; y: 43 }
 
     PathLine { x: shape.width * 0.93; y: 58 }
@@ -52,6 +57,11 @@ Shape {
       PathLine { x: width * 0.02; y: 58 }
       PathLine { x: width * 0.05; y: 58 }
       PathLine { x: width * 0.07; y: 43 }
+
+      PathLine { x: width * 0.2; y: 43 }
+      PathLine { x: width * 0.22; y: 50 }
+      PathLine { x: width * 0.8; y: 50 }
+      PathLine { x: width * 0.82; y: 43 }
 
       PathLine { x: width * 0.9; y: 43 }
 

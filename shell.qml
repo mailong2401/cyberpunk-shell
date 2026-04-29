@@ -30,6 +30,7 @@ ShellRoot {
     sourceComponent: Item {
       Component.onCompleted: {
       }
+      PanelLeft{}
       PanelRight{}
       Bar {}
     }

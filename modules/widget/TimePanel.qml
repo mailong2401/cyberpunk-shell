@@ -6,16 +6,14 @@ import Qt5Compat.GraphicalEffects
 
 Rectangle {
   color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
-  implicitHeight: 300
+  implicitHeight: 250
   implicitWidth: parent.width
   radius: 16
-  border.color: "#831C91"
-  border.width: 1
 
   ColumnLayout {
     anchors.fill: parent
     anchors.margins: 30
-    spacing: 15
+    spacing: 8
 
     // Greeting
     Text {
@@ -43,7 +41,7 @@ Rectangle {
       Layout.alignment: Qt.AlignLeft
       text: "未来は今日始まる。"
       color: "#e0e0f0"
-      font.pixelSize: 22
+      font.pixelSize: 16
       font.italic: true
     }
 
@@ -81,7 +79,7 @@ Rectangle {
             samples: 16
             color: "#5b2adc"
           }
-          font.pixelSize: 48
+          font.pixelSize: 40
         }
 
         // Temperature
