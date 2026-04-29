@@ -16,7 +16,7 @@ RowLayout {
       layer.effect: Glow {
         radius: 10
         samples: 16
-        color: "#ff00ff"
+        color: "#831C91"
       }
       font.family: cyberFont.name
       text: "CPU"
@@ -41,7 +41,7 @@ RowLayout {
       layer.effect: Glow {
         radius: 10
         samples: 16
-        color: "#ff00ff"
+        color: "#831C91"
       }
       font.family: cyberFont.name
 
@@ -67,7 +67,7 @@ RowLayout {
       layer.effect: Glow {
         radius: 10
         samples: 16
-        color: "#ff00ff"
+        color: "#831C91"
       }
       font.family: cyberFont.name
 
@@ -93,7 +93,7 @@ RowLayout {
       layer.effect: Glow {
         radius: 10
         samples: 16
-        color: "#ff00ff"
+        color: "#831C91"
       }
       font.family: cyberFont.name
 
@@ -117,7 +117,7 @@ RowLayout {
     layer.effect: Glow {
       radius: 12
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
     font.family: "Material Symbols Rounded"
     text: "wifi"
@@ -131,7 +131,7 @@ RowLayout {
     layer.effect: Glow {
       radius: 12
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
     font.family: "Material Symbols Rounded"
     text: "volume_up"
@@ -145,7 +145,7 @@ RowLayout {
     layer.effect: Glow {
       radius: 12
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
     font.family: "Material Symbols Rounded"
     text: "brightness_7"
@@ -159,7 +159,7 @@ RowLayout {
     layer.effect: Glow {
       radius: 12
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
     font.family: "Material Symbols Rounded"
     text: "power_settings_new"

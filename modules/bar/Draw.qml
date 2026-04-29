@@ -38,12 +38,12 @@ Shape {
     layer.effect: Glow {
       radius: 8
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
 
     ShapePath {
       strokeWidth: 2
-      strokeColor: "#ff00ff"
+      strokeColor: "#831C91"
       fillColor: "transparent"
 
       startX: 0; startY: 43

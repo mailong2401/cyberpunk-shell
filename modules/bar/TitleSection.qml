@@ -13,20 +13,15 @@ Item {
 
     ShapePath {
       strokeWidth: 2
-      strokeColor: "#ff00ff"
+      strokeColor: "#831C91"
       fillColor: "transparent"
       joinStyle: ShapePath.MiterJoin
 
       startX: 0
       startY: 10
 
-      // ===== line ngang tới hết chữ =====
       PathLine { x: textTitle.x + textTitle.width; y: 10 }
-
-      // ===== chéo xuống =====
       PathLine { x: textTitle.x + textTitle.width + 15; y: 25 }
-
-      // ===== kéo ngang tiếp =====
       PathLine { x: shapeText.width + 50; y: 25 }
     }
   }
@@ -43,7 +38,7 @@ Item {
     layer.effect: Glow {
       radius: 12
       samples: 16
-      color: "#ff00ff"
+      color: "#831C91"
     }
     font.family: cyberFont.name
     font.pixelSize: 24

@@ -9,7 +9,7 @@ Image {
   layer.effect: Glow {
     radius: 6
     samples: 16
-    color: "#FF70BF"
+    color: "#831C91"
   }
 
   source: "../../assets/images/logo/logo.png"
