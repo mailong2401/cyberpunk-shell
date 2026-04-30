@@ -5,7 +5,6 @@ import Qt5Compat.GraphicalEffects
 Shape {
   id: shape
   anchors.fill: parent
-  layer.enabled: true
 
   ShapePath {
     strokeWidth: 0
@@ -39,10 +38,17 @@ Shape {
   // ===== CHỈ VẼ ĐƯỜNG DƯỚI =====
   Shape {
     anchors.fill: parent
+    layer.enabled: true
+
+    layer.effect: Glow {
+      radius: 12
+      samples: 25
+      color: "#5b2adc"
+    }
 
     ShapePath {
       strokeWidth: 2
-      strokeColor: "#831C91"
+      strokeColor: "white"
       fillColor: "transparent"
 
       startX: 0; startY: 43

@@ -54,7 +54,6 @@ Item {
   }
 
   // Hyprland monitors process for display scale detection
-  // Hyprland monitors process for display scale detection
   Process {
     id: hyprlandMonitorsProcess
     running: false
@@ -138,7 +137,8 @@ Item {
           "isActive": ws.active === true,
           "isFocused": ws.focused === true,
           "isUrgent": ws.urgent === true,
-          "isOccupied": occupiedIds[ws.id] === true
+          "isOccupied": occupiedIds[ws.id] === true,
+          "hasFullscreen" : ws.hasFullscreen === true,
         };
 
         workspaceCache[ws.id] = wsData;

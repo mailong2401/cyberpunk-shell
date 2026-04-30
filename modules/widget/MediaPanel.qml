@@ -90,14 +90,6 @@ Rectangle {
           anchors.centerIn: parent
           spacing: 8
           visible: albumImage.status !== Image.Ready || !currentPlayer
-
-          Text {
-            text: "🎵"
-            font.pixelSize: 40
-            anchors.horizontalCenter: parent.horizontalCenter
-            color: "#666"
-          }
-
           Text {
             text: "No Art"
             font.pixelSize: 12
@@ -123,6 +115,12 @@ Rectangle {
           Text {
             id: songText
             text: currentPlayer?.trackTitle ?? "Not Playing"
+            layer.enabled: true
+            layer.effect: Glow {
+              radius: 12
+              samples: 25
+              color: "#5b2adc"
+            }
             color: "white"
             font {
               family: "ComicShannsMono Nerd Font"
@@ -276,9 +274,9 @@ Rectangle {
         text: "skip_previous"
         layer.enabled: true
         layer.effect: Glow {
-          radius: 8
-          samples: 16
-          color: "#831C91"
+          radius: 12
+          samples: 25
+          color: "#5b2adc"
         }
         font {
           bold: true
@@ -295,7 +293,7 @@ Rectangle {
         layer.effect: Glow {
           radius: 8
           samples: 16
-          color: "#831C91"
+          color: "#5b2adc"
         }
         font {
           bold: true
@@ -311,7 +309,7 @@ Rectangle {
         layer.effect: Glow {
           radius: 8
           samples: 16
-          color: "#831C91"
+          color: "#5b2adc"
         }
         text: "skip_next"
         font {

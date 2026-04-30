@@ -1,10 +1,3 @@
-import QtQuick
-import QtQuick.Layouts
-import Quickshell
-import Quickshell.Wayland
-import  qs.services
-import Qt5Compat.GraphicalEffects
-
 PanelWindow {
   implicitWidth: 400
   implicitHeight: Screen.height
@@ -15,12 +8,5 @@ PanelWindow {
     right: true
     bottom: true
     top: true
-  }
-  ColumnLayout{
-    anchors.fill: parent
-    anchors.margins: 16
-    WeatherPanel{}
-    MediaPanel{}
-    CalendarPanel{}
   }
 }
