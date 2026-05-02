@@ -2,13 +2,14 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Qt5Compat.GraphicalEffects
+import  qs.components.layout.graphics
 
 Rectangle {
-  color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
+  color: "transparent"
   implicitHeight: 300
   implicitWidth: parent.width
-  radius: 16
 
+  Graphic1{}
   ColumnLayout {
     anchors.fill: parent
     anchors.margins: 30

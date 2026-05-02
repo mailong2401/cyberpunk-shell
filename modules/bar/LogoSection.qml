@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Qt5Compat.GraphicalEffects
+import qs.services
 
 Item {
   width: 55
@@ -29,6 +30,8 @@ Item {
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor
     onClicked: {
+      VisibleService.togglePanel("dashboard");
+      console.log("oke");
     }
     onEntered: hovered = true
     onExited: hovered = false

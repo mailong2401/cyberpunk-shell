@@ -4,16 +4,22 @@ import Quickshell
 import Quickshell.Wayland
 import Qt5Compat.GraphicalEffects
 import QtQuick.Shapes
+import  qs.components.layout.graphics
 
 Rectangle {
-  color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
-  implicitHeight: 250
+  color : "transparent"
+  implicitHeight: 270
   implicitWidth: parent.width
   radius: 16
 
+  Graphic1{}
+
   ColumnLayout {
     anchors.fill: parent
-    anchors.margins: 30
+    anchors.leftMargin: 30
+    anchors.bottomMargin: 40
+    anchors.topMargin: 30
+    anchors.rightMargin: 30
     spacing: 8
 
     Text {

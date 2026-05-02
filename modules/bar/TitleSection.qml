@@ -27,7 +27,7 @@ Item {
   }
   Text {
     id: textTitle
-    text: "CYBERPUNK 2077"
+    text: "NEON CYBERPUNK"
     anchors {
       left: parent.left
       verticalCenter: parent.verticalCenter

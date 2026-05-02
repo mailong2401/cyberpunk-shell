@@ -1,12 +1,23 @@
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
+import QtQuick.Shapes
+import Qt5Compat.GraphicalEffects
+import qs.components.layout.graphics
+
 PanelWindow {
-  implicitWidth: 400
-  implicitHeight: Screen.height
-  WlrLayershell.exclusiveZone: 0   // không chiếm không gian ứng dụng
-  color: "transparent"
-  WlrLayershell.layer: WlrLayer.Bottom
+  implicitWidth: 350
+  implicitHeight: 400
+  focusable: true
+  color: "red"
+
   anchors {
-    right: true
     bottom: true
-    top: true
+    right: true
   }
+  margins{
+    top: 10
+    right: 10
+  }
+  Graphic2{}
 }

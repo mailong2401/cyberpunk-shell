@@ -173,9 +173,6 @@ Singleton {
     for (var i = 0; i < ws.count; i++) {
       workspaces.append(ws.get(i));
     }
-    for (var i = 0; i < workspaces.count; i++) {
-      console.log("WS", i, JSON.stringify(workspaces.get(i)))
-    }
     // Emit signal to notify listeners that workspace list has been updated
     workspacesChanged();
   }

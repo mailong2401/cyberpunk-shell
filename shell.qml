@@ -8,9 +8,9 @@ import QtQuick.Effects
 
 import qs.modules.bar
 import qs.commons
-import  qs.modules.widget
-import  qs.services
-import  qs.modules.background
+import qs.modules.widget
+import qs.services
+import qs.modules.background
 
 ShellRoot {
   id: root
@@ -19,6 +19,7 @@ ShellRoot {
     id: cyberFont
     source: "assets/fonts/GlitchGoblin.ttf"
   }
+  LoaderService{}
 
   property bool settingsLoaded: false
   Connections {
