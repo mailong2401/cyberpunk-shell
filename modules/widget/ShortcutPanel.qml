@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import Quickshell
 import Qt5Compat.GraphicalEffects
 import  qs.components.layout.graphics
+import  qs.components
 
 Rectangle {
   color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
@@ -63,11 +64,11 @@ Rectangle {
       // My PC
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "desktop_windows"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "My PC"
@@ -87,11 +88,11 @@ Rectangle {
       // Documents
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "description"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Documents"
@@ -111,11 +112,11 @@ Rectangle {
       // Downloads
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "download"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Downloads"
@@ -135,11 +136,11 @@ Rectangle {
       // Pictures
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "image"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Pictures"
@@ -159,11 +160,11 @@ Rectangle {
       // Music
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "music_note"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Music"
@@ -183,12 +184,13 @@ Rectangle {
       // Videos
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "videocam"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
+
         Text {
           text: "Videos"
           color: "white"
@@ -207,11 +209,11 @@ Rectangle {
       // Settings
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "settings"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Settings"
@@ -231,11 +233,11 @@ Rectangle {
       // Trash
       RowLayout {
         spacing: 20
-        Text {
-          font.family: "Material Symbols Rounded"
+        GlowIcon{
           text: "delete"
-          font.pixelSize: 20
-          color: "#831C91"
+          font{
+            pixelSize: 20
+          }
         }
         Text {
           text: "Trash"

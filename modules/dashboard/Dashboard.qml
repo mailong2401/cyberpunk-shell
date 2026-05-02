@@ -12,12 +12,12 @@ PanelWindow {
   color: "red"
 
   anchors {
-    bottom: true
+    top: true
     right: true
   }
   margins{
     top: 10
     right: 10
   }
-  Graphic2{}
+  Graphic4{}
 }

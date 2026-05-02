@@ -25,6 +25,12 @@ RowLayout {
     }
     Text {
       text: "23%"
+      layer.enabled: true
+      layer.effect: Glow {
+        radius: 12
+        samples: 25
+        color: "#5b2adc"
+      }
       color: "white"
       font.family: cyberFont.name
 
@@ -53,6 +59,12 @@ RowLayout {
       text: "48%"
       font.family: cyberFont.name
 
+      layer.enabled: true
+      layer.effect: Glow {
+        radius: 12
+        samples: 25
+        color: "#5b2adc"
+      }
       color: "white"
       font.pixelSize: 18
       font.bold: true
@@ -77,6 +89,12 @@ RowLayout {
     }
     Text {
       text: "67%"
+      layer.enabled: true
+      layer.effect: Glow {
+        radius: 12
+        samples: 25
+        color: "#5b2adc"
+      }
       color: "white"
       font.family: cyberFont.name
 
@@ -103,6 +121,12 @@ RowLayout {
     }
     Text {
       text: "72%"
+      layer.enabled: true
+      layer.effect: Glow {
+        radius: 12
+        samples: 25
+        color: "#5b2adc"
+      }
       color: "white"
       font.family: cyberFont.name
       font.pixelSize: 18
@@ -113,43 +137,43 @@ RowLayout {
 
   // WiFi Icon
   Text {
-    layer.enabled: true
-    layer.effect: Glow {
-      radius: 12
-      samples: 16
-      color: "#831C91"
-    }
     font.family: "Material Symbols Rounded"
     text: "wifi"
     font.pixelSize: 30
+    layer.enabled: true
+    layer.effect: Glow {
+      radius: 12
+      samples: 25
+      color: "#5b2adc"
+    }
     color: "white"
   }
 
   // Volume Icon
   Text {
-    layer.enabled: true
-    layer.effect: Glow {
-      radius: 12
-      samples: 16
-      color: "#831C91"
-    }
     font.family: "Material Symbols Rounded"
     text: "volume_up"
     font.pixelSize: 30
+    layer.enabled: true
+    layer.effect: Glow {
+      radius: 12
+      samples: 25
+      color: "#5b2adc"
+    }
     color: "white"
   }
 
   // Brightness Icon
   Text {
-    layer.enabled: true
-    layer.effect: Glow {
-      radius: 12
-      samples: 16
-      color: "#831C91"
-    }
     font.family: "Material Symbols Rounded"
     text: "brightness_7"
     font.pixelSize: 30
+    layer.enabled: true
+    layer.effect: Glow {
+      radius: 12
+      samples: 25
+      color: "#5b2adc"
+    }
     color: "white"
   }
 
@@ -158,12 +182,12 @@ RowLayout {
     layer.enabled: true
     layer.effect: Glow {
       radius: 12
-      samples: 16
-      color: "#831C91"
+      samples: 25
+      color: "#5b2adc"
     }
+    color: "white"
     font.family: "Material Symbols Rounded"
     text: "power_settings_new"
     font.pixelSize: 30
-    color: "white"
   }
 }

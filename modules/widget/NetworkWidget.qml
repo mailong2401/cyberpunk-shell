@@ -2,14 +2,15 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Qt5Compat.GraphicalEffects
+import  qs.components.layout.graphics
 
 Rectangle {
-  color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
+  color: "transparent"
   implicitHeight: 200
   implicitWidth: parent.width
   radius: 16
-  border.color: "#831C91"
-  border.width: 2
+
+  Graphic3{}
 
   property color barBackground: Qt.rgba(0.15, 0.15, 0.15, 0.8)
   property color progressColor: "#831C91"

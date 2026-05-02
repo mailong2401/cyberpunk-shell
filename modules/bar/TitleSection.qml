@@ -13,7 +13,7 @@ Item {
 
     ShapePath {
       strokeWidth: 2
-      strokeColor: "#831C91"
+      strokeColor: "white"
       fillColor: "transparent"
       joinStyle: ShapePath.MiterJoin
 

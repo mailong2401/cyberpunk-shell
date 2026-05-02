@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Qt5Compat.GraphicalEffects
+import  qs.components.layout.graphics
 
 Rectangle {
   id: calendarPanel
@@ -12,12 +13,12 @@ Rectangle {
   property int currentYear: currentDate.getFullYear()
   property date selectedDate: new Date()
 
-  color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
-  implicitHeight: 350
+  Graphic4{}
+
+  color: "transparent"
+  implicitHeight: 370
   implicitWidth: parent.width
   radius: 16
-  border.color: "#831C91"
-  border.width: 2
 
   signal dateSelected(date selectedDate)
 
@@ -27,7 +28,10 @@ Rectangle {
 
   ColumnLayout {
     anchors.fill: parent
-    anchors.margins: 20
+    anchors.leftMargin: 30
+    anchors.bottomMargin: 50
+    anchors.topMargin: 30
+    anchors.rightMargin: 30
     spacing: 3
 
     // Header: CALENDAR title
@@ -135,16 +139,14 @@ Rectangle {
       }
     }
 
-    // Go to Today button
-
     // Calendar grid
     GridLayout {
       id: calendarGrid
       Layout.fillWidth: true
       Layout.fillHeight: true
       columns: 7
-      rowSpacing: 3
-      columnSpacing: 3
+      rowSpacing: 2
+      columnSpacing: 2
 
       // Week day headers
       Repeater {

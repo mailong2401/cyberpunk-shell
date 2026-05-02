@@ -5,16 +5,17 @@ import Quickshell
 import Qt5Compat.GraphicalEffects
 import qs.services
 import Quickshell.Services.Mpris
+import  qs.components.layout.graphics
 
 Rectangle {
   id: musicPanel
 
-  color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
+  color: "transparent"
   implicitHeight: 300
   implicitWidth: parent.width
   radius: 16
-  border.color: "#831C91"
-  border.width: 1
+
+  Graphic3{}
 
   // Bind to active player
   readonly property var currentPlayer: Players.mprisPlayer
@@ -35,8 +36,11 @@ Rectangle {
 
   ColumnLayout {
     anchors.fill: parent
-    anchors.margins: 20
-    spacing: 12
+    anchors.leftMargin: 40
+    anchors.bottomMargin: 50
+    anchors.topMargin: 40
+    anchors.rightMargin: 40
+    spacing: 5
 
     // Header: MUSIC PLAYER title
     Text {
@@ -216,15 +220,14 @@ Rectangle {
           width: parent.width * getProgress()
           height: parent.height
           radius: 2
-          color: "#831C91"
+          color: "white"
 
           // Glow effect on progress bar
           layer.enabled: true
           layer.effect: Glow {
-            radius: 4
-            samples: 8
-            color: "#831C91"
-            spread: 0.5
+            radius: 12
+            samples: 25
+            color: "#5b2adc"
           }
         }
       }
