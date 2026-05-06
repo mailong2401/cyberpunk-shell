@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import  Quickshell.Io
 import Qt5Compat.GraphicalEffects
-import  qs.components.layout.graphics
-import  qs.components
+import qs.components.layout.graphics
+import qs.components
+import qs.commons
 
 Rectangle {
   color: Qt.rgba(0.04, 0.04, 0.04, 0.8)
@@ -13,6 +15,55 @@ Rectangle {
 
   Graphic2{}
 
+  readonly property var menuItems: [
+  { icon: "desktop_windows", label: "My PC" },
+  { icon: "description", label: "Documents" },
+  { icon: "download", label: "Downloads" },
+  { icon: "image", label: "Pictures" },
+  { icon: "music_note", label: "Music" },
+  { icon: "videocam", label: "Videos" },
+  { icon: "settings", label: "Settings" },
+  { icon: "delete", label: "Trash" }
+  ]
+
+  Process {
+    id: openProc
+  }
+
+  function openPath(label) {
+    let home = Directories.home
+    let path = ""
+
+    switch (label) {
+      case "My PC":
+      path = home + "/"
+      break
+      case "Documents":
+      path = home + "/Documents"
+      break
+      case "Downloads":
+      path =home + "/Downloads"
+      break
+      case "Pictures":
+      path = home + "/Pictures"
+      break
+      case "Music":
+      path = home + "/Music"
+      break
+      case "Videos":
+      path = home + "/Videos"
+      break
+      case "Trash":
+      path = "trash:///"
+      break
+      case "Settings":
+      return
+    }
+
+    openProc.command = ["sh", "-c", "nautilus '" + path + "' &"]
+    openProc.running = true
+  }
+
   RowLayout {
     anchors.fill: parent
     anchors.leftMargin: 0
@@ -20,240 +71,107 @@ Rectangle {
     anchors.rightMargin: 30
     anchors.bottomMargin: 30
     spacing: 30
+
+    // Left sidebar with rotated text
     RowLayout {
       spacing: 0
+
       Item {
         implicitWidth: 20
         Layout.fillHeight: true
-        Text{
+        Text {
           text: "NEON CYBERPUNK"
           color: "#831C91"
           rotation: 270
           anchors.horizontalCenter: parent.horizontalCenter
           anchors.bottom: parent.bottom
           anchors.bottomMargin: 45
-          font {
-            family: cyberFont.name
-            pixelSize: 12
-          }
+          font { family: cyberFont.name; pixelSize: 12 }
         }
       }
+
       Item {
         implicitWidth: 15
         Layout.fillHeight: true
         clip: true
-        Text{
-          anchors.horizontalCenter: parent.horizontalCenter
-          anchors.bottom: parent.bottom
-          anchors.bottomMargin: 20
+        Text {
           text: "FILE SYSTEM"
           color: "#831C91"
           rotation: 270
-          font {
-            family: cyberFont.name
-            pixelSize: 8
-          }
+          anchors.horizontalCenter: parent.horizontalCenter
+          anchors.bottom: parent.bottom
+          anchors.bottomMargin: 20
+          font { family: cyberFont.name; pixelSize: 8 }
         }
       }
     }
 
+    // Main menu items
     ColumnLayout {
-
       spacing: 3
 
-      // My PC
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "desktop_windows"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "My PC"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+      Repeater {
+        model: menuItems
 
-      // Documents
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "description"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "Documents"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+        Rectangle {
+          id: itemRoot
+          radius: 8
+          color: hovered ? Qt.rgba(0.2, 0, 0.3, 0.4) : "transparent"
 
-      // Downloads
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "download"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "Downloads"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+          property bool hovered: false
 
-      // Pictures
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "image"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "Pictures"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+          Layout.fillWidth: true
+          implicitHeight: 30
 
-      // Music
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "music_note"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "Music"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+          RowLayout {
+            anchors.fill: parent
+            anchors.leftMargin: 10
+            spacing: 20
 
-      // Videos
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "videocam"
-          font{
-            pixelSize: 20
-          }
-        }
+            GlowIcon {
+              id: iconItem
+              text: modelData.icon
+              font.pixelSize: hovered ? 24 : 20
 
-        Text {
-          text: "Videos"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+              Behavior on font.pixelSize {
+                NumberAnimation { duration: 150 }
+              }
+            }
 
-      // Settings
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "settings"
-          font{
-            pixelSize: 20
-          }
-        }
-        Text {
-          text: "Settings"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
-          }
-          font{
-            pixelSize: 18
-          }
-        }
-      }
+            GlowText {
+              id: labelItem
+              text: modelData.label
+              color: hovered ? "#ff66ff" : "white"
+              font.pixelSize: hovered ? 20 : 18
 
-      // Trash
-      RowLayout {
-        spacing: 20
-        GlowIcon{
-          text: "delete"
-          font{
-            pixelSize: 20
+              Behavior on color {
+                ColorAnimation { duration: 150 }
+              }
+
+              Behavior on font.pixelSize {
+                NumberAnimation { duration: 150 }
+              }
+            }
           }
-        }
-        Text {
-          text: "Trash"
-          color: "white"
-          layer.enabled: true
-          layer.effect: Glow {
-            radius: 8
-            samples: 16
-            color: "#831C91"
+
+          MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+
+            onEntered: itemRoot.hovered = true
+            onExited: itemRoot.hovered = false
+
+            onClicked: {
+              openPath(modelData.label)
+            }
           }
-          font{
-            pixelSize: 18
+
+          Behavior on color {
+            ColorAnimation { duration: 150 }
           }
         }
       }
     }
   }
-
 }

@@ -74,7 +74,7 @@ Rectangle {
         Layout.preferredHeight: 120
         radius: 12
         color: "#1a1a1a"
-        border.color: "#831C91"
+        border.color: "white"
         border.width: 1
         clip: true
 

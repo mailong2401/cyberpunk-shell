@@ -5,12 +5,11 @@ import Quickshell.Wayland
 import Qt5Compat.GraphicalEffects
 import QtQuick.Shapes
 import  qs.components.layout.graphics
+import  qs.services
 
-Rectangle {
-  color : "transparent"
+Item {
   implicitHeight: 270
   implicitWidth: parent.width
-  radius: 16
 
   Graphic1{}
 
@@ -84,7 +83,7 @@ Rectangle {
 
         Text {
           id: timeText
-          text: "20:47"
+          text: TimeService.getTimeString()
           color: "#ffffff"
           font.pixelSize: 40
           font.bold: true
@@ -123,7 +122,7 @@ Rectangle {
 
         Text {
           id: dateText
-          text: "24 May, 2026"
+          text: TimeService.getDateString()
           color: "white"
           font.pixelSize: 16
 
@@ -137,7 +136,7 @@ Rectangle {
 
         Text {
           id: dayText
-          text: "Friday"
+          text: TimeService.getWeekday()
           color: "white"
           font.pixelSize: 14
 

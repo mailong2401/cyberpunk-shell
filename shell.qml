@@ -33,7 +33,8 @@ ShellRoot {
     sourceComponent: Item {
       Component.onCompleted: {
         WallpaperService.init();
-        Players.init()
+        Players.init();
+        TimeService.init()
       }
       Background {}
       PanelLeft{}
