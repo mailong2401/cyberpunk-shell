@@ -46,9 +46,9 @@ Shape {
       strokeColor: "white"
       fillColor: "white"
       startX: width * 0.05 ; startY: height * 0.7
-      PathLine{x: 0;y: height * 0.75 }
-      PathLine{x: 0;y: height }
-      PathLine{x: width * 0.3;y: height }
+      PathLine{x: width * 0.02;y: height * 0.75 }
+      PathLine{x: width * 0.02;y: height * 0.98 }
+      PathLine{x: width * 0.3;y: height * 0.98 }
       PathLine{x: width * 0.25;y: height * 0.95}
       PathLine{x: width * 0.05;y: height * 0.95}
       PathLine{x: width * 0.05;y: height * 0.7}

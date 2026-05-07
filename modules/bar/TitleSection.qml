@@ -6,10 +6,17 @@ import Qt5Compat.GraphicalEffects
 
 Item {
   Layout.fillHeight: true
-  Layout.preferredWidth: textTitle.implicitWidth
+  Layout.preferredWidth: textTitle.implicitWidth + 40
   Shape {
     id: shapeText
     anchors.fill: parent
+    layer.enabled: true
+
+    layer.effect: Glow {
+      radius: 12
+      samples: 25
+      color: "#5b2adc"
+    }
 
     ShapePath {
       strokeWidth: 2

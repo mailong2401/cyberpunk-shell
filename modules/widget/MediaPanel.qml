@@ -40,7 +40,7 @@ Rectangle {
     anchors.bottomMargin: 50
     anchors.topMargin: 40
     anchors.rightMargin: 40
-    spacing: 5
+    spacing: 10
 
     // Header: MUSIC PLAYER title
     Text {
@@ -188,17 +188,6 @@ Rectangle {
           elide: Text.ElideRight
         }
 
-        // Album name (optional)
-        Text {
-          text: currentPlayer?.trackAlbum ?? ""
-          color: "#808080"
-          font {
-            pixelSize: 12
-          }
-          Layout.fillWidth: true
-          elide: Text.ElideRight
-          visible: text !== ""
-        }
       }
     }
 

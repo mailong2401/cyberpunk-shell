@@ -11,6 +11,8 @@ Singleton {
   property real cpuUsage: 0
   property int cpuHistoryLength: 60
   property var cpuHistory: new Array(cpuHistoryLength).fill(0)
+  readonly property int diskHistoryLength: Math.max(10, Math.ceil(historyDurationMs / diskIntervalMs))
+  readonly property int historyDurationMs: (1 * 60 * 1000) // 1 minute
   property real memGb: 0
   property int memPercent: 0
   property real memTotalGb: 0
@@ -26,6 +28,7 @@ Singleton {
   property var diskUsedGb: ({}) // Used space in GB per mount point
   property var diskAvailableGb: ({}) // available space in GB per mount point
   property var diskSizeGb: ({}) // Total size in GB per mount point
+  property var diskHistories: ({})
 
   property int memHistoryLength: 60
   property var memHistory: new Array(memHistoryLength).fill(0)

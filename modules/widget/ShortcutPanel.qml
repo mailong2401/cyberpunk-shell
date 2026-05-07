@@ -70,7 +70,7 @@ Rectangle {
     anchors.topMargin: 30
     anchors.rightMargin: 30
     anchors.bottomMargin: 30
-    spacing: 30
+    spacing: 40
 
     // Left sidebar with rotated text
     RowLayout {
@@ -108,6 +108,9 @@ Rectangle {
 
     // Main menu items
     ColumnLayout {
+      Layout.fillHeight: true
+      Layout.fillWidth: true
+
       spacing: 3
 
       Repeater {
@@ -121,11 +124,13 @@ Rectangle {
           property bool hovered: false
 
           Layout.fillWidth: true
-          implicitHeight: 30
+          implicitHeight: 28
+
+          Graphic3{}
 
           RowLayout {
             anchors.fill: parent
-            anchors.leftMargin: 10
+            anchors.leftMargin: 20
             spacing: 20
 
             GlowIcon {
